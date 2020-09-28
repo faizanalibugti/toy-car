@@ -15,7 +15,7 @@ lefts = []
 rights = []
 forwards = []
 
-shuffle(train_data)
+#shuffle(train_data)
 
 for data in train_data:
     img = data[0]
@@ -36,7 +36,7 @@ lefts = lefts[:len(forwards)]
 rights = rights[:len(forwards)]
 
 final_data = forwards + lefts + rights
-shuffle(final_data)
+#shuffle(final_data)
 
 np.save('training_data.npy', final_data)
 
