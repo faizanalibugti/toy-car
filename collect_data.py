@@ -46,7 +46,7 @@ def main():
     while(True):
 
         if not paused:
-            # 800x600 windowed mode
+            # 640x480 windowed mode
             screen = grab_screen(region=(0,40,640,480))
             last_time = time.time()
             screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
