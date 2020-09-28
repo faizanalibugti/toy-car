@@ -2,8 +2,8 @@
 
 import numpy as np
 from alexnet import alexnet2
-WIDTH = 320
-HEIGHT = 240
+WIDTH = 160
+HEIGHT = 120
 LR = 1e-3
 EPOCHS = 10
 MODEL_NAME = 'pygta5-car-fast-{}-{}-{}-epochs-300K-data.model'.format(LR, 'alexnetv2',EPOCHS)
