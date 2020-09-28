@@ -1,14 +1,14 @@
 # train_model.py
 
 import numpy as np
-from alexnet import alexnet
+from alexnet import alexnet2
 WIDTH = 320
 HEIGHT = 240
 LR = 1e-3
 EPOCHS = 10
 MODEL_NAME = 'pygta5-car-fast-{}-{}-{}-epochs-300K-data.model'.format(LR, 'alexnetv2',EPOCHS)
 
-model = alexnet(WIDTH, HEIGHT, LR)
+model = alexnet2(WIDTH, HEIGHT, LR)
 
 
 train_data = np.load('training_data-{}-balanced.npy'.format(i))
