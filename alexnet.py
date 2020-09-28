@@ -62,13 +62,13 @@ def alexnet2(width, height, lr, output=3):
     network = max_pool_2d(network, 3, strides=2)
     network = local_response_normalization(network)
     network = fully_connected(network, 4096, activation='tanh')
-    network = dropout(network, 0.5)
+    network = dropout(network, 0.7)
     network = fully_connected(network, 4096, activation='tanh')
-    network = dropout(network, 0.5)
+    network = dropout(network, 0.7)
     network = fully_connected(network, 4096, activation='tanh')
-    network = dropout(network, 0.5)
+    network = dropout(network, 0.7)
     network = fully_connected(network, 4096, activation='tanh')
-    network = dropout(network, 0.5)
+    network = dropout(network, 0.7)
     network = fully_connected(network, output, activation='softmax')
     network = regression(network, optimizer='momentum',
                          loss='categorical_crossentropy',
