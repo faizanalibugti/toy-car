@@ -5,15 +5,15 @@ from alexnet import alexnet2
 WIDTH = 160
 HEIGHT = 120
 LR = 1e-3
-EPOCHS = 10
-MODEL_NAME = 'pygta5-car-fast-{}-{}-{}-epochs-300K-data.model'.format(LR, 'alexnetv2',EPOCHS)
+EPOCHS = 1
+MODEL_NAME = 'pycar-{}-{}-{}-epochs-82k-data.model'.format(LR, 'alexnetv2',EPOCHS)
 
 model = alexnet2(WIDTH, HEIGHT, LR)
 
 hm_data = 22
 for i in range(EPOCHS):
     for i in range(1,hm_data+1):
-        train_data = np.load('training_data-{}-balanced.npy'.format(i))
+        train_data = np.load('main_right.npy'.format(i))
 
         train = train_data[:-100]
         test = train_data[-100:]
