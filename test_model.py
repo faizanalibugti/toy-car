@@ -5,7 +5,7 @@ from grabscreen import grab_screen
 import cv2
 import time
 from directkeys import PressKey,ReleaseKey, W, A, S, D
-from alexnet import alexnet
+from alexnet import alexnet2
 from getkeys import key_check
 
 import random
@@ -14,7 +14,7 @@ WIDTH = 160
 HEIGHT = 120
 LR = 1e-3
 EPOCHS = 10
-MODEL_NAME = 'pygta5-car-fast-{}-{}-{}-epochs-300K-data.model'.format(LR, 'alexnetv2',EPOCHS)
+MODEL_NAME = 'pycar-{}-{}-{}-epochs-82k-data.model'.format(LR, 'alexnetv2',EPOCHS)
 
 t_time = 0.09
 
