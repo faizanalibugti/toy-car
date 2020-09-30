@@ -44,7 +44,7 @@ def right():
     time.sleep(t_time)
     ReleaseKey(D)
     
-model = alexnet(WIDTH, HEIGHT, LR)
+model = alexnet2(WIDTH, HEIGHT, LR)
 model.load(MODEL_NAME)
 
 def main():
