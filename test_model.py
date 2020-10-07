@@ -47,8 +47,16 @@ def right():
 model = alexnet2(WIDTH, HEIGHT, LR)
 model.load(MODEL_NAME)
 
+def region_of_interest(img, vertices):
+    mask = np.zeros_like(img)
+    match_mask_color = 255
+    cv2.fillPoly(mask, vertices, match_mask_color)
+    masked_image = cv2.bitwise_and(img, mask)
+    return masked_image
+
 def main():
     last_time = time.time()
+    region_of_interest_vertices = [(0, 480), (0, 294), (640, 294), (640, 480)]
     for i in list(range(4))[::-1]:
         print(i+1)
         time.sleep(1)
@@ -63,6 +71,7 @@ def main():
             print('loop took {} seconds'.format(time.time()-last_time))
             last_time = time.time()
             screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
+            screen = region_of_interest(screen, np.array([region_of_interest_vertices],np.int32),)
             screen = cv2.resize(screen, (160,120))
 
             prediction = model.predict([screen.reshape(160,120,1)])[0]
